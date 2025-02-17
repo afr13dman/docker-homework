@@ -1,4 +1,4 @@
-FROM ubuntu 
+FROM ubuntu:16.04 
 
 LABEL maintainer="afriedma3668@lambda.compute.cmc.edu"
 
@@ -10,6 +10,7 @@ COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
+RUN python -m pip install --upgrade pip==20.2.4
 RUN pip install -r requirements.txt
 
 COPY . /app
